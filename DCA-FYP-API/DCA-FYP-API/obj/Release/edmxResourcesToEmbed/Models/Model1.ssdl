@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DisciplineCommitteeAssistantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AssignPunishent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseId" Type="int" />
+    <Property Name="PunishType" Type="varchar" MaxLength="50" />
+    <Property Name="Fine" Type="nchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Startdate" Type="varchar" MaxLength="50" />
+    <Property Name="EndDate" Type="varchar" MaxLength="50" />
+    <Property Name="PunishmentTitle" Type="nchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Casecategory">
+    <Key>
+      <PropertyRef Name="Categoryid" />
+    </Key>
+    <Property Name="Categoryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categoryname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CaseMeeting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CaseId" Type="int" />
+    <Property Name="StartTime" Type="varchar" MaxLength="100" />
+    <Property Name="EndTime" Type="varchar" MaxLength="100" />
+    <Property Name="MeetingDate" Type="datetime" />
+    <Property Name="Venue" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Punishment">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="HasFine" Type="varchar" MaxLength="50" />
+    <Property Name="Ptype" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Punishment_Detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sid" Type="int" Nullable="false" />
+    <Property Name="Cid" Type="int" Nullable="false" />
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="Appeal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dir_Comment" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PunishmentType">
+    <Key>
+      <PropertyRef Name="Ptype_id" />
+    </Key>
+    <Property Name="Ptype_id" Type="int" Nullable="false" />
+    <Property Name="Ptype_Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Register10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReportCase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportedBy" Type="int" />
+    <Property Name="ReportedTo" Type="int" />
+    <Property Name="StudentId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ReportedDate" Type="datetime" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar" MaxLength="1000" />
+    <Property Name="CaseType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RequestAppeal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="caseid" Type="int" Nullable="false" />
+    <Property Name="comments" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Directorcomments" Type="varchar(max)" />
+    <Property Name="hocComment" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="int" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" />
+    <Property Name="Degree" Type="varchar" MaxLength="50" />
+    <Property Name="Section" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="AridNo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Teacherid" />
+    </Key>
+    <Property Name="Teacherid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Teachername" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Teachercategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Teacherid" Type="varchar" MaxLength="150" />
+    <Property Name="Categoryid" Type="int" />
+  </EntityType>
+  <EntityType Name="TrackPunishment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="caseid" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="Punishmentid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRASH-hold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Trash-Hold" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Usertype" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AridNo" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="image" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="DisciplineCommitteeAssistantModelStoreContainer">
+    <EntitySet Name="AssignPunishent" EntityType="Self.AssignPunishent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Casecategory" EntityType="Self.Casecategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CaseMeeting" EntityType="Self.CaseMeeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Punishment" EntityType="Self.Punishment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Punishment_Detail" EntityType="Self.Punishment_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PunishmentType" EntityType="Self.PunishmentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Register10" EntityType="Self.Register10" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportCase" EntityType="Self.ReportCase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RequestAppeal" EntityType="Self.RequestAppeal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teachercategory" EntityType="Self.Teachercategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrackPunishment" EntityType="Self.TrackPunishment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRASH-hold" EntityType="Self.TRASH-hold" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

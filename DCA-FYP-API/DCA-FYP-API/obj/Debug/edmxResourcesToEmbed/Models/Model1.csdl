@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DisciplineCommitteeAssistantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AssignPunishent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CaseId" Type="Int32" />
+    <Property Name="PunishType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fine" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Startdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PunishmentTitle" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Casecategory">
+    <Key>
+      <PropertyRef Name="Categoryid" />
+    </Key>
+    <Property Name="Categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CaseMeeting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CaseId" Type="Int32" />
+    <Property Name="StartTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EndTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MeetingDate" Type="DateTime" Precision="3" />
+    <Property Name="Venue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Punishment">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="HasFine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ptype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Punishment_Detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sid" Type="Int32" Nullable="false" />
+    <Property Name="Cid" Type="Int32" Nullable="false" />
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="Appeal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dir_Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PunishmentType">
+    <Key>
+      <PropertyRef Name="Ptype_id" />
+    </Key>
+    <Property Name="Ptype_id" Type="Int32" Nullable="false" />
+    <Property Name="Ptype_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ReportCase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportedBy" Type="Int32" />
+    <Property Name="ReportedTo" Type="Int32" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="ReportedDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CaseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RequestAppeal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="caseid" Type="Int32" Nullable="false" />
+    <Property Name="comments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Directorcomments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hocComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="Int32" Nullable="false" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AridNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Teacherid" />
+    </Key>
+    <Property Name="Teacherid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Teachername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Teachercategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Teacherid" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Categoryid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrackPunishment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="caseid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Punishmentid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRASH_hold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Trash_Hold1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AridNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AssignPunishents" EntityType="Self.AssignPunishent" />
+    <EntitySet Name="Casecategories" EntityType="Self.Casecategory" />
+    <EntitySet Name="CaseMeetings" EntityType="Self.CaseMeeting" />
+    <EntitySet Name="Punishments" EntityType="Self.Punishment" />
+    <EntitySet Name="Punishment_Detail" EntityType="Self.Punishment_Detail" />
+    <EntitySet Name="PunishmentTypes" EntityType="Self.PunishmentType" />
+    <EntitySet Name="ReportCases" EntityType="Self.ReportCase" />
+    <EntitySet Name="RequestAppeals" EntityType="Self.RequestAppeal" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="Teachercategories" EntityType="Self.Teachercategory" />
+    <EntitySet Name="TrackPunishments" EntityType="Self.TrackPunishment" />
+    <EntitySet Name="TRASH_hold" EntityType="Self.TRASH_hold" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Register10" EntityType="DisciplineCommitteeAssistantModel.Register10" />
+    <EntitySet Name="Smoking10" EntityType="DisciplineCommitteeAssistantModel.Smoking10" />
+    <EntitySet Name="Catagorythresholds" EntityType="DisciplineCommitteeAssistantModel.Catagorythreshold" />
+    <EntitySet Name="fight10" EntityType="DisciplineCommitteeAssistantModel.fight10" />
+    <EntitySet Name="harresment10" EntityType="DisciplineCommitteeAssistantModel.harresment10" />
+    <EntitySet Name="missbehave10" EntityType="DisciplineCommitteeAssistantModel.missbehave10" />
+  </EntityContainer>
+  <EntityType Name="Register10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Smoking10">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="somking10value" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="somking10value" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Catagorythreshold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Setval" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fight10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="value" Type="Int32" />
+  </EntityType>
+  <EntityType Name="harresment10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="value" Type="Int32" />
+  </EntityType>
+  <EntityType Name="missbehave10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="value" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DisciplineCommitteeAssistantModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="AssignPunishents">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.AssignPunishent">
+        <MappingFragment StoreEntitySet="AssignPunishent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="PunishType" ColumnName="PunishType" />
+          <ScalarProperty Name="Fine" ColumnName="Fine" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PunishmentTitle" ColumnName="PunishmentTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Casecategories">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Casecategory">
+        <MappingFragment StoreEntitySet="Casecategory">
+          <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+          <ScalarProperty Name="Categoryname" ColumnName="Categoryname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaseMeetings">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.CaseMeeting">
+        <MappingFragment StoreEntitySet="CaseMeeting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="Venue" ColumnName="Venue" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Punishments">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Punishment">
+        <MappingFragment StoreEntitySet="Punishment">
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="HasFine" ColumnName="HasFine" />
+          <ScalarProperty Name="Ptype" ColumnName="Ptype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Punishment_Detail">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Punishment_Detail">
+        <MappingFragment StoreEntitySet="Punishment_Detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="Appeal" ColumnName="Appeal" />
+          <ScalarProperty Name="Dir_Comment" ColumnName="Dir_Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PunishmentTypes">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.PunishmentType">
+        <MappingFragment StoreEntitySet="PunishmentType">
+          <ScalarProperty Name="Ptype_id" ColumnName="Ptype_id" />
+          <ScalarProperty Name="Ptype_Category" ColumnName="Ptype_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportCases">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.ReportCase">
+        <MappingFragment StoreEntitySet="ReportCase">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="ReportedTo" ColumnName="ReportedTo" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ReportedDate" ColumnName="ReportedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CaseType" ColumnName="CaseType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestAppeals">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.RequestAppeal">
+        <MappingFragment StoreEntitySet="RequestAppeal">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="Directorcomments" ColumnName="Directorcomments" />
+          <ScalarProperty Name="hocComment" ColumnName="hocComment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="AridNo" ColumnName="AridNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="Teacherid" ColumnName="Teacherid" />
+          <ScalarProperty Name="Teachername" ColumnName="Teachername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachercategories">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Teachercategory">
+        <MappingFragment StoreEntitySet="Teachercategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Teacherid" ColumnName="Teacherid" />
+          <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrackPunishments">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.TrackPunishment">
+        <MappingFragment StoreEntitySet="TrackPunishment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Punishmentid" ColumnName="Punishmentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRASH_hold">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.TRASH_hold">
+        <MappingFragment StoreEntitySet="TRASH-hold">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Trash_Hold1" ColumnName="Trash-Hold" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+          <ScalarProperty Name="AridNo" ColumnName="AridNo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Register10">
+      <EntityTypeMapping TypeName="DisciplineCommitteeAssistantModel.Register10">
+        <MappingFragment StoreEntitySet="Register10">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
